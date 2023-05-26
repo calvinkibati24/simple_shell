@@ -41,7 +41,8 @@ char *str;
 struct liststr *next;
 } list_t;
 /**
- * struct passinfo - function that contains pseudo-arguements to pass into a function
+ * struct passinfo - function that contains pseudo-arguements,
+ * to pass into a function
  * @arg: a string generated from getline containing arguements
  * @argv:an array of strings generated from arg
  * @path: a string path for the current command
@@ -86,7 +87,8 @@ int histcount;
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 0, 0, 0}
 /**
- * struct builtin - function that contains a builtin string and related function
+ * struct builtin - function that contains a builtin
+ * string and related function
  * @type: the builtin command flag
  * @func: the function
  */
@@ -94,8 +96,7 @@ typedef struct builtin
 {
 char *type;
 int (*func)(info_t *);
-} 
-builtin_table;
+} builtin_table;
 /* toem_shloop.c */
 int hsh(info_t *, char **);
 int find_builtin(info_t *);
