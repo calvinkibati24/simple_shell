@@ -10,13 +10,15 @@ int i = 0;
 if (!str)
 return;
 while (str[i] != '\0')
-{ _eputchar(str[i]);
+{
+_eputchar(str[i]);
 i++;
 }
 }
 /**
  * _eputchar - function that writes the character c
  * @c: The character to print
+ *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
@@ -34,9 +36,10 @@ buf[i++] = c;
 return (1);
 }
 /**
- * _putfd - function that writes the character c
+ * _putfd - function writes the character c to given fd
  * @c: The character to print
  * @fd: The filedescriptor to write to
+ *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
@@ -45,6 +48,7 @@ int _putfd(char c, int fd)
 static int i;
 static char buf[WRITE_BUF_SIZE];
 if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+{	
 write(fd, buf, i);
 i = 0;
 }
@@ -60,7 +64,7 @@ return (1);
  */
 int _putsfd(char *str, int fd)
 {
-i = 0;
+int i = 0;
 if (!str)
 return (0);
 while (*str)
